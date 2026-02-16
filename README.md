@@ -39,7 +39,6 @@
 | 应用 | 去广告范围 | 来源 |
 |------|-----------|------|
 | **微博** | 首页信息流、搜索页、详情页、评论区、开屏广告、视频流、个人页推广等 | [@ddgksf2013](https://github.com/ddgksf2013/Rewrite) |
-| **YouTube** | 视频贴片广告、瀑布流广告、搜索页广告、短视频广告，附带 PIP 画中画 + 后台播放 | [@Maasea](https://github.com/Maasea/sgmodule) / [@ddgksf2013](https://github.com/ddgksf2013/Rewrite) |
 
 > **注意**：应用去广告功能需要开启 MitM 并信任证书才能生效。
 
@@ -105,15 +104,33 @@ https://raw.githubusercontent.com/xchenliu/shadowrocket-config/master/Shadowrock
 
 下载完成后，在配置列表中点击刚下载的配置文件 → 选择 **使用配置**（配置前会出现黄色圆点表示已激活）。
 
-### 第四步：添加订阅节点
+### 第四步：开启 MitM（必须）
+
+Shadowrocket → **配置** → 点击配置文件右边的 **ⓘ** → **HTTPS 解密** → 打开开关 → **生成新的 CA 证书** → **安装证书** → 去手机 **设置 → 通用 → 关于本机 → 证书信任设置** → 信任该证书。
+
+> **没有这一步，微博去广告等脚本重写功能完全不会生效。**
+
+### 第五步：添加订阅节点
 
 回到 Shadowrocket **首页** → 点击右上角 **+** → 类型选择 **Subscribe** → 粘贴你的机场订阅链接 → 保存。
 
 > **注意**：Shadowrocket 的节点和配置是分开管理的。配置文件只包含规则和策略组，节点需要单独通过订阅添加。添加后策略组会自动按正则匹配到对应地区的节点。
 
-### 第五步：开启代理
+### 第六步：开启代理
 
 回到首页，打开顶部的 **连接开关**，即可开始使用。
+
+### 更新配置
+
+如果配置有更新，需要重新下载：
+
+Shadowrocket → **配置** → 点击你之前下载的配置 → 选择 **使用配置**，或者删掉旧的重新添加：
+
+```
+https://raw.githubusercontent.com/xchenliu/shadowrocket-config/master/Shadowrocket.conf
+```
+
+> **注意**：重新下载配置后需要再次开启 HTTPS 解密并信任证书（参考第四步）。
 
 ---
 
@@ -149,7 +166,6 @@ https://raw.githubusercontent.com/xchenliu/shadowrocket-config/master/Shadowrock
 
 - 规则列表：[blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
 - 微博去广告：[ddgksf2013/Rewrite](https://github.com/ddgksf2013/Rewrite)（墨鱼版）
-- YouTube 去广告：[Maasea/sgmodule](https://github.com/Maasea/sgmodule) / [ddgksf2013/Rewrite](https://github.com/ddgksf2013/Rewrite)
 - Quantumult X 版本：[xchenliu/quantumultx-config](https://github.com/xchenliu/quantumultx-config)
 
 ## 许可证
