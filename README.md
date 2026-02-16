@@ -13,13 +13,14 @@
 
 | 服务 | 策略组 | 默认地区 |
 |------|--------|----------|
-| ChatGPT / OpenAI | AI-US | 新加坡 |
+| ChatGPT / OpenAI | AI-SG | 新加坡 |
+| OpenAI API | AI-API | 新加坡 |
 | Claude / Anthropic | Claude | 新加坡 |
 | Gemini | AI-US | 美国 |
 | Grok | AI-US | 美国 |
-| DeepSeek | AI-US | 新加坡 |
-| Perplexity | AI-US | 新加坡 |
-| Copilot | AI-US | 新加坡 |
+| DeepSeek | AI-SG | 新加坡 |
+| Perplexity | AI-SG | 新加坡 |
+| Copilot | AI-SG | 新加坡 |
 
 ### 流媒体 & 社交平台
 每个服务独立策略组，可单独选择地区节点：
@@ -45,9 +46,10 @@
 ```
 Global（Auto / US / HK / JP / SG / TW / DIRECT）
   |
-  |-- AI-US ........... ChatGPT、Gemini、Grok、DeepSeek、Perplexity、Copilot
-  |-- AI-API .......... OpenAI API 调用
-  |-- Claude .......... Claude / Anthropic
+  |-- AI-SG ........... ChatGPT、DeepSeek、Perplexity、Copilot（默认新加坡）
+  |-- AI-US ........... Gemini、Grok（默认美国）
+  |-- AI-API .......... OpenAI API 调用（默认新加坡）
+  |-- Claude .......... Claude / Anthropic（默认新加坡）
   |
   |-- YouTube ......... YouTube + CDN
   |-- Netflix ......... Netflix
